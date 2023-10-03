@@ -2,56 +2,33 @@
 <html>
 <head>
   <title>Clothing Size Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    /* General styles */
-    body {
-      font-family: Arial, sans-serif;
-      color: black;
-      background-color: white;
+    /* General Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
     }
-
-    /* Stylish Form Elements */
-    #sizeForm input, #sizeForm select {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-
-    /* Interactive Button Styles */
-    #openPopupBtn:hover, #calculateBtn:hover, #closePopupBtn:hover {
-      background-color: darkorange;
-    }
-
-    /* More styles */
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid black;
-    }
-    label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    input[type="number"], select {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0 20px 0;
-      border: 1px solid black;
-    }
-    button {
-      background-color: orange;
+    /* Hero Section */
+    #hero {
+      background-image: url('https://via.placeholder.com/1600x400');
+      background-size: cover;
       color: white;
-      padding: 14px 20px;
-      border: none;
+      text-align: center;
+      padding: 100px 0;
+    }
+    /* Centered Button */
+    #openPopupBtn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5em;
+      padding: 20px 40px;
       cursor: pointer;
     }
-
-    /* Styles for pop-up */
+    /* Popup Styles */
     .hidden {
       display: none;
     }
@@ -72,40 +49,50 @@
       background: white;
       border-radius: 8px;
     }
+    /* Form Styles */
+    #sizeForm input, #sizeForm select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
   </style>
 </head>
 <body>
   <!-- Hero Section -->
-  <section id="hero" style="background-image: url('https://via.placeholder.com/1600x400'); background-size: cover; color: white; text-align: center; padding: 50px 0;">
+  <section id="hero">
     <h1>Welcome to the Clothing Size Calculator</h1>
     <p>Find your perfect fit in seconds!</p>
   </section>
-
-  <!-- Button to trigger the pop-up -->
+  
+  <!-- Centered Button -->
   <button id="openPopupBtn">Find Your Size</button>
 
-  <!-- Pop-up Container -->
+  <!-- Popup Container -->
   <div id="popupContainer" class="hidden">
     <div id="popupContent">
-      <!-- Close button for the pop-up -->
       <button id="closePopupBtn">Close</button>
-      
-      <!-- Form -->
       <h1>Clothing Size Calculator</h1>
       <form id="sizeForm">
         <label for="height">Height (cm):</label>
         <input type="number" id="height" name="height">
-        
         <label for="weight">Weight (kg):</label>
         <input type="number" id="weight" name="weight">
-        
         <label for="fitting">Preferred Fit:</label>
         <select id="fitting" name="fitting">
           <option value="tight">Tight</option>
           <option value="normal">Normal</option>
           <option value="loose">Loose</option>
         </select>
-        
         <button type="button" id="calculateBtn">Calculate Size</button>
       </form>
       <div id="result"></div>
@@ -113,17 +100,17 @@
   </div>
 
   <!-- Footer -->
-  <footer style="background-color: #333; color: white; text-align: center; padding: 10px;">
-    <p>Follow us on <a href="#" style="color: orange;">Facebook</a>, <a href="#" style="color: orange;">Twitter</a>, and <a href="#" style="color: orange;">Instagram</a></p>
+  <footer>
+    <p>Follow us on <a href="https://www.instagram.com/cotte_mdp/" target="_blank" style="color: orange;">Instagram</a></p>
   </footer>
 
   <script>
-    // Function to show the pop-up
+    // Function to show the popup
     function showPopup() {
       document.getElementById("popupContainer").classList.remove("hidden");
     }
 
-    // Function to hide the pop-up
+    // Function to hide the popup
     function hidePopup() {
       document.getElementById("popupContainer").classList.add("hidden");
     }
@@ -134,10 +121,8 @@
 
     // Function to calculate the recommended clothing size
     function calculateSize() {
-      // ... (your existing JavaScript code)
+      // Your existing JavaScript code for size calculation
     }
   </script>
-
 </body>
 </html>
-
