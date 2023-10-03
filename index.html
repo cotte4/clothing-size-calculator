@@ -3,11 +3,29 @@
 <head>
   <title>Clothing Size Calculator</title>
   <style>
+    /* General styles */
     body {
       font-family: Arial, sans-serif;
       color: black;
       background-color: white;
     }
+
+    /* Stylish Form Elements */
+    #sizeForm input, #sizeForm select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    /* Interactive Button Styles */
+    #openPopupBtn:hover, #calculateBtn:hover, #closePopupBtn:hover {
+      background-color: darkorange;
+    }
+
+    /* More styles */
     .container {
       max-width: 600px;
       margin: auto;
@@ -19,8 +37,7 @@
       margin-bottom: 10px;
       font-weight: bold;
     }
-    input[type="number"],
-    select {
+    input[type="number"], select {
       width: 100%;
       padding: 10px;
       margin: 5px 0 20px 0;
@@ -33,9 +50,7 @@
       border: none;
       cursor: pointer;
     }
-    button:hover {
-      background-color: darkorange;
-    }
+
     /* Styles for pop-up */
     .hidden {
       display: none;
@@ -60,6 +75,11 @@
   </style>
 </head>
 <body>
+  <!-- Hero Section -->
+  <section id="hero" style="background-image: url('https://via.placeholder.com/1600x400'); background-size: cover; color: white; text-align: center; padding: 50px 0;">
+    <h1>Welcome to the Clothing Size Calculator</h1>
+    <p>Find your perfect fit in seconds!</p>
+  </section>
 
   <!-- Button to trigger the pop-up -->
   <button id="openPopupBtn">Find Your Size</button>
@@ -92,6 +112,11 @@
     </div>
   </div>
 
+  <!-- Footer -->
+  <footer style="background-color: #333; color: white; text-align: center; padding: 10px;">
+    <p>Follow us on <a href="#" style="color: orange;">Facebook</a>, <a href="#" style="color: orange;">Twitter</a>, and <a href="#" style="color: orange;">Instagram</a></p>
+  </footer>
+
   <script>
     // Function to show the pop-up
     function showPopup() {
@@ -109,41 +134,10 @@
 
     // Function to calculate the recommended clothing size
     function calculateSize() {
-      const height = parseInt(document.getElementById("height").value);
-      const weight = parseInt(document.getElementById("weight").value);
-      const fitting = document.getElementById("fitting").value;
-
-      let optimalSize = "";
-      let alternativeSize = "";
-
-      // Sample size calculation logic
-      if (height <= 160 && weight <= 60) {
-        optimalSize = "XS";
-        alternativeSize = (fitting === "loose") ? "S" : "XS";
-      } else if (height <= 175 && weight <= 75) {
-        optimalSize = "S";
-        alternativeSize = (fitting === "loose") ? "M" : "XS";
-      } else if (height <= 185 && weight <= 85) {
-        optimalSize = "M";
-        alternativeSize = (fitting === "loose") ? "L" : "S";
-      } else if (height <= 195 && weight <= 95) {
-        optimalSize = "L";
-        alternativeSize = (fitting === "loose") ? "XL" : "M";
-      } else {
-        optimalSize = "XL";
-        alternativeSize = "XL";
-      }
-
-      // Display the result
-      document.getElementById("result").innerHTML = `
-        <p>Optimal Size: ${optimalSize}</p>
-        <p>Alternative Size: ${alternativeSize}</p>
-      `;
+      // ... (your existing JavaScript code)
     }
-
-    // Attach the function to the button click event
-    document.getElementById("calculateBtn").addEventListener("click", calculateSize);
   </script>
 
 </body>
 </html>
+
