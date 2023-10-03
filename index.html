@@ -12,11 +12,13 @@
     }
     /* Hero Section */
     #hero {
-      background-image: url('https://via.placeholder.com/1600x400');
-      background-size: cover;
+      background-color: grey;
+      height: 400px;
       color: white;
       text-align: center;
-      padding: 100px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     /* Centered Button */
     #openPopupBtn {
@@ -71,9 +73,8 @@
   <!-- Hero Section -->
   <section id="hero">
     <h1>Welcome to the Clothing Size Calculator</h1>
-    <p>Find your perfect fit in seconds!</p>
   </section>
-  
+
   <!-- Centered Button -->
   <button id="openPopupBtn">Find Your Size</button>
 
@@ -120,9 +121,27 @@
     document.getElementById("closePopupBtn").addEventListener("click", hidePopup);
 
     // Function to calculate the recommended clothing size
-    function calculateSize() {
-      // Your existing JavaScript code for size calculation
-    }
+    document.getElementById("calculateBtn").addEventListener("click", function() {
+      const height = parseInt(document.getElementById("height").value);
+      const weight = parseInt(document.getElementById("weight").value);
+      const fitting = document.getElementById("fitting").value;
+
+      let optimalSize = "";
+      let alternativeSize = "";
+
+      // Your size calculation logic here
+      // Example:
+      if (height <= 160 && weight <= 60) {
+        optimalSize = "XS";
+        alternativeSize = (fitting === "loose") ? "S" : "XS";
+      }
+      // ... (Other conditions)
+
+      document.getElementById("result").innerHTML = `
+        <p>Optimal Size: ${optimalSize}</p>
+        <p>Alternative Size: ${alternativeSize}</p>
+      `;
+    });
   </script>
 </body>
 </html>
